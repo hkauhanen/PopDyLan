@@ -1,0 +1,3 @@
+var documenterSearchIndex = {"docs":
+[{"location":"#PopDyLan.jl-Documentation-1","page":"PopDyLan.jl Documentation","title":"PopDyLan.jl Documentation","text":"","category":"section"},{"location":"#","page":"PopDyLan.jl Documentation","title":"PopDyLan.jl Documentation","text":"listen!(x::VL, y::VL, a)","category":"page"},{"location":"#Main.PopDyLan.listen!-Tuple{VL,VL,Any}","page":"PopDyLan.jl Documentation","title":"Main.PopDyLan.listen!","text":"listen!(x::VL, y::VL, a)\n\nMake learner x listen to learner y with grammatical advantages a. Learner x's state is (potentially) updated if the learner is plastic. Learner y's (the speaker) state is not modified.\n\n\n\n\n\n","category":"method"}]
+}
