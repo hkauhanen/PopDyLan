@@ -7,4 +7,4 @@ using Documenter, .PopDyLan
 
 makedocs(sitename="PopDyLan.jl")
 
-deploydocs(repo="github.com/hkauhanen/PopDyLan.jl.git")
+deploydocs(repo="github.com/hkauhanen/PopDyLan.jl.git", devbranch="dev")
