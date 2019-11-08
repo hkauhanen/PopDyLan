@@ -12,7 +12,7 @@ Methods are here divided into *simulation methods* (functions you use to conduct
 
 ```@docs
 getolder!(x::Speaker)
-listen!(x::VL, y::Speaker, a)
+listen!(x::VariationalLearner, y::Speaker, a)
 ```
 
 

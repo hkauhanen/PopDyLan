@@ -13,7 +13,7 @@ Variable
 
 ```@docs
 Speaker
-VL
+VariationalLearner
 ```
 
 ## Population Types
