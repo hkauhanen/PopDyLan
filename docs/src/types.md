@@ -12,6 +12,7 @@ Variable
 ## Individual Types
 
 ```@docs
+Speaker
 VL
 ```
 

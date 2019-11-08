@@ -1,7 +1,7 @@
 """
 Variational Learner (1-parameter)
 """
-mutable struct VL
+mutable struct VariationalLearner <: Speaker
   gamma::Float64 # learning rate
   parprob::Float64 # probability that parameter is on
   age::Int # speaker's age
@@ -10,11 +10,11 @@ end
 
 
 """
-    listen!(x::VL, y::VL, a)
+    listen!(x::VariationalLearner, y::Speaker, a)
 
-Make Variational Learner `x` listen to learner `y` with grammatical advantages `a`. Learner `x`'s state is (potentially) updated if the learner is plastic. Learner `y`'s (the speaker's) state is not modified.
+Make [`Variational Learner`](@ref) `x` listen to [`Speaker`](@ref) `y` with grammatical advantages `a`. Learner `x`'s state is (potentially) updated if the learner is plastic. The speaker's state is not modified.
 """
-function listen!(x::VL, y::VL, a)
+function listen!(x::VL, y::Speaker, a)
   if x.plastic
     xpick = rand(Float64)
     ypick = rand(Float64)
@@ -40,11 +40,3 @@ function listen!(x::VL, y::VL, a)
 end
 
 
-"""
-    getolder!(x::VL)
-
-Increase x's age by one.
-"""
-function getolder!(x::VL)
-  x.age += 1
-end
