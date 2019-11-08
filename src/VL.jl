@@ -12,9 +12,7 @@ end
 """
     listen!(x::VL, y::VL, a)
 
-Make learner x listen to learner y with grammatical advantages a.
-Learner x's state is (potentially) updated if the learner is plastic.
-Learner y's (the speaker) state is not modified.
+Make Variational Learner `x` listen to learner `y` with grammatical advantages `a`. Learner `x`'s state is (potentially) updated if the learner is plastic. Learner `y`'s (the speaker's) state is not modified.
 """
 function listen!(x::VL, y::VL, a)
   if x.plastic

@@ -1,9 +1,9 @@
-"PopDyLan - Population Dynamics of Language"
+"""
+PopDyLan - Population Dynamics of Language
+"""
 module PopDyLan
 
-include("VL.jl")
-
-export VL
-export listen!
+include("ling.jl") # general linguistics types and methods
+include("VL.jl") # variational learning
 
 end
