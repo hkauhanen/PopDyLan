@@ -4,4 +4,4 @@ PopDyLan.jl is a [Julia](https://julialang.org/) module for exploring the popula
 
 ## Documentation
 
-Documentation is available [here](latest)..
+Documentation is available [here](latest/intro).
