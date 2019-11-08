@@ -5,15 +5,20 @@ Methods (functions) operate on types, producing an output or modifying their inp
 !!! note
     In Julia, types do not own methods (like objects in, say, C++ do). As a consequence, to make `foo` `act` on `bar`, we do something like `act(foo, bar)` rather than `foo.act(bar)`.
 
-Methods are here divided into *simulation methods* (functions you use to conduct simulations) and *auxiliary methods* (e.g. functions for dealing with data).
+Methods are here divided into *simulation methods* (functions you use to conduct simulations), *constructor methods* (constructors for types) and *auxiliary methods* (e.g. functions for dealing with data).
 
 
 ## Simulation Methods
 
 ```@docs
-Variable(n::Int)
-Variable(p::Array)
 listen!(x::VL, y::VL, a)
+```
+
+
+## Constructor Methods
+
+```@docs
+Variable(n::Int)
 ```
 
 

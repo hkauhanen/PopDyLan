@@ -9,9 +9,9 @@ end
 
 
 """
-Variable(n::Int)
+    Variable(n::Int)
 
-Constructs a `Variable` of `n` values with a uniform distribution over those values.
+Constructs a [`Variable`](@ref) of `n` values with a uniform distribution over those values.
 """
 Variable(n::Int) = Variable([1/n for i in 1:n])
 
