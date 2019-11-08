@@ -1,4 +1,4 @@
-name = "PopDyLan.jl"
+name = "PopDyLan"
 uuid = "2c5e63cc-620b-4ab7-8b18-4abeee52c37a"
 authors = ["Henri Kauhanen <nenahuak@gmail.com>"]
 version = "0.0"
