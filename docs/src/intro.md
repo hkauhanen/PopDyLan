@@ -8,7 +8,3 @@
 !!! note
     This Documentation assumes you are running Julia 1.2 or later.
 
-## Table of Contents
-
-```@contents
-```
