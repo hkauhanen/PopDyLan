@@ -10,6 +10,9 @@ export Variable
 # Generic population types and methods
 include("pop.jl")
 export Speaker
+export Community
+export inject!
+export eject!
 export getolder!
 
 # Variational Learning

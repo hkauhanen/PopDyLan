@@ -18,4 +18,6 @@ VariationalLearner
 
 ## Population Types
 
-
+```@docs
+Community
+```

@@ -11,7 +11,9 @@ Methods are here divided into *simulation methods* (functions you use to conduct
 ## Simulation Methods
 
 ```@docs
+eject!
 getolder!(x::Speaker)
+inject!
 listen!(x::VariationalLearner, y::Speaker, a)
 ```
 
