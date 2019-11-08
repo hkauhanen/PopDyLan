@@ -1,12 +1,14 @@
 # Usage
 
-To install PopDyLan, type:
+PopDyLan is currently under alpha development and not yet within the Julia General Registry. To install from GitHub:
 
-    FIXME
+```{julia}
+using Pkg
+Pkg.add(PackageSpec(url="https://github.com/hkauhanen/PopDyLan.jl"))
+```
 
-To load the module:
+Once installed, the module is loaded in the usual way
 
-    FIXME
-
-And you're set!
-
+```{julia}
+using PopDyLan
+```

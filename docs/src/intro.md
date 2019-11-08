@@ -5,4 +5,5 @@
 !!! note
     PopDyLan.jl is currently in development, awaiting a first stable release. Use at your own risk.
 
-
+!!! note
+    This Documentation assumes you are running Julia 1.2 or later.
