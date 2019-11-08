@@ -14,7 +14,7 @@ end
 
 Make [`Variational Learner`](@ref) `x` listen to [`Speaker`](@ref) `y` with grammatical advantages `a`. Learner `x`'s state is (potentially) updated if the learner is plastic. The speaker's state is not modified.
 """
-function listen!(x::VL, y::Speaker, a)
+function listen!(x::VariationalLearner, y::Speaker, a)
   if x.plastic
     xpick = rand(Float64)
     ypick = rand(Float64)
