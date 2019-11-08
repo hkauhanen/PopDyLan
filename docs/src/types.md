@@ -5,6 +5,10 @@ In PopDyLan.jl, important data structures are given their own types. Thus, there
 
 ## Linguistic Types
 
+```@docs
+Variable
+```
+
 ## Individual Types
 
 ```@docs

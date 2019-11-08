@@ -11,6 +11,8 @@ Methods are here divided into *simulation methods* (functions you use to conduct
 ## Simulation Methods
 
 ```@docs
+Variable(n::Int)
+Variable(p::Array)
 listen!(x::VL, y::VL, a)
 ```
 
