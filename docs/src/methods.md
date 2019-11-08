@@ -11,7 +11,8 @@ Methods are here divided into *simulation methods* (functions you use to conduct
 ## Simulation Methods
 
 ```@docs
-listen!(x::VL, y::VL, a)
+getolder!(x::Speaker)
+listen!(x::VL, y::Speaker, a)
 ```
 
 
