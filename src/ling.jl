@@ -1,6 +1,8 @@
 # General Types and Methods to do with Language
 
 """
+    Variable
+
 A linguistic variable; a probability distribution over a set of values.
 """
 mutable struct Variable
