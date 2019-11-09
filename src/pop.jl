@@ -2,12 +2,14 @@
 
 
 """
-Speaker
+    Speaker
 """
 abstract type Speaker end
 
 
 """
+    Community
+
 A `Community` is a collection of [`Speaker`](@ref)s; technically, a `Dict` whose values are [`Speaker`](@ref)s, with integer keys. A `Community` is empty when initialized; see [`inject!`](@ref) and [`eject!`](@ref).
 """
 mutable struct Community
