@@ -12,16 +12,19 @@ Methods are here divided into *simulation methods* (functions you use to conduct
 
 ```@docs
 eject!
-getolder!(x::Speaker)
+getolder!
 inject!
-listen!(x::VariationalLearner, y::Speaker, a)
+learn!
+listen!
+speak
 ```
 
 
 ## Constructor Methods
 
 ```@docs
-Variable(n::Int)
+Variable
+VariationalLearner
 ```
 
 

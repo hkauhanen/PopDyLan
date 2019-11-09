@@ -3,6 +3,9 @@ PopDyLan - Population Dynamics of Language
 """
 module PopDyLan
 
+# dependencies
+using Distributions
+
 # Generic linguistic types and methods
 include("ling.jl")
 export Variable
@@ -18,6 +21,8 @@ export getolder!
 # Variational Learning
 include("VL.jl")
 export VariationalLearner
+export speak
+export learn!
 export listen!
 
 end

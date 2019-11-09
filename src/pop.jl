@@ -8,9 +8,7 @@ abstract type Speaker end
 
 
 """
-Community
-
-A `Community` is a collection of [`Speaker`](@ref)s; technically, a [`Dict`](@ref) whose values are [`Speaker`](@ref)s, with integer keys. A `Community` is empty when initialized.
+A `Community` is a collection of [`Speaker`](@ref)s; technically, a `Dict` whose values are [`Speaker`](@ref)s, with integer keys. A `Community` is empty when initialized; see [`inject!`](@ref) and [`eject!`](@ref).
 """
 mutable struct Community
   people::Dict{Int,Speaker}
@@ -39,6 +37,7 @@ Remove a [`Speaker`](@ref) with ID `x` from a [`Community`](@ref).
 """
 function eject!(x::Int, y::Community)
   delete!(y.people, x)
+  # FIXME need also to delete x from the friends lists of all other speakers
 end
 
 
@@ -49,4 +48,16 @@ Increase `x`'s age by one.
 """
 function getolder!(x::Speaker)
   x.age += 1
+end
+
+
+"""
+    getolder!(x::Community)
+
+Increase the age of everyone in `x` by one.
+"""
+function getolder!(x::Community)
+  for y in values(x.people)
+    y.age += 1
+  end
 end
