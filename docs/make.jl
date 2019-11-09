@@ -10,8 +10,8 @@ makedocs(sitename="PopDyLan.jl",
          pages = ["Home" => "intro.md",
                   "Usage" => "usage.md",
                   "Reference" => [
-                                  "Types" => "types.md",
-                                  "Methods" => "methods.md"
+                                  "Types and Constructors" => "types.md",
+                                  "Functions and Methods" => "methods.md"
                                  ],
                   "Examples" => "examples.md"])
 
