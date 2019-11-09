@@ -30,7 +30,7 @@ VariationalLearner(g::Float64, A::Array{Float64,2}; age::Int=0, plastic::Bool=tr
 """
     VariationalLearner(g::Float64, a1::Float64, a2::Float64; age::Int=0, plastic::Bool=true)
 
-Construcs a classical 2-grammar (i.e. 1-parameter) [`VariationalLearner`](@ref) with learning rate `g` and advantage parameters `a1` and `a2`. The learner's age and plasticity flag can be optionally set with the keyword arguments `age` and `plastic`. By default, each learner is constructed with age 0 and in a plastic state.
+Constructs a classical 2-grammar (i.e. 1-parameter) [`VariationalLearner`](@ref) with learning rate `g` and advantage parameters `a1` and `a2`. The learner's age and plasticity flag can be optionally set with the keyword arguments `age` and `plastic`. By default, each learner is constructed with age 0 and in a plastic state.
 """
 VariationalLearner(g::Float64, a1::Float64, a2::Float64; age::Int=0, plastic::Bool=true) = VariationalLearner(g, [0.5, 0.5], 2, [0 a2; a1 0], age, plastic)
 
