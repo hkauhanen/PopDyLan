@@ -1,8 +1,8 @@
 include("../src/PopDyLan.jl")
 
 import Pkg
-Pkg.add("Documenter")
 Pkg.add("Distributions")
+Pkg.add("Documenter")
 
 using Documenter, .PopDyLan
 
