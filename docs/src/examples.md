@@ -39,6 +39,7 @@ It is easy to modify the above example to cater for inter-generational learning 
 parent = VariationalLearner(0.01, 0.2, 0.1; age=30, plastic=false)
 setprobabilities!(parent, [0.1, 0.9])
 for gen in 1:10
+  global parent
   child = VariationalLearner(0.01, 0.2, 0.1; age=0, plastic=true)
   for i in 1:10_000
     listen!(child, parent)
@@ -46,6 +47,34 @@ for gen in 1:10
   parent = child
 end
 ```
+
+!!! note
+    The line
+```julia
+global parent
+```
+    is necessary here so that the inner code block can modify the value of the global `parent` variable.
+
+To keep track of the inter-generational evolution, we add another global variable that registers the evolution of the first grammar probability at each generation:
+
+```julia
+parent = VariationalLearner(0.01, 0.2, 0.1; age=30, plastic=false)
+setprobabilities!(parent, [0.1, 0.9])
+results = Array{Float64}(undef, 11)
+results[1] = parent.probabilities[1]
+for gen in 1:10
+  global parent
+  child = VariationalLearner(0.01, 0.2, 0.1; age=0, plastic=true)
+  for i in 1:10_000
+    listen!(child, parent)
+  end
+  parent = child
+  results[gen+1] = parent.probabilities[1]
+end
+```
+
+!!! note
+    In performance-critical applications, [global variables should be avoided](https://docs.julialang.org/en/v1/manual/performance-tips/#Avoid-global-variables-1). This is easiest done by wrapping the code up in a function.
 
 
 ## A community of variational learners
