@@ -5,9 +5,22 @@ child = VariationalLearner(0.01, 0.2, 0.1; age=0, plastic=true)</code></pre><p>B
 end</code></pre><p>You can consult <code>child.probabilities</code> to see how the learner&#39;s grammatical probabilities have changed by the end of the learning episode.</p><h2><a class="nav-anchor" id="Iterated-learning-across-generations-1" href="#Iterated-learning-across-generations-1">Iterated learning across generations</a></h2><p>It is easy to modify the above example to cater for inter-generational learning (a single speaker–listener loop), say for 10 generations:</p><pre><code class="language-">parent = VariationalLearner(0.01, 0.2, 0.1; age=30, plastic=false)
 setprobabilities!(parent, [0.1, 0.9])
 for gen in 1:10
+  global parent
   child = VariationalLearner(0.01, 0.2, 0.1; age=0, plastic=true)
   for i in 1:10_000
     listen!(child, parent)
   end
   parent = child
-end</code></pre><h2><a class="nav-anchor" id="A-community-of-variational-learners-1" href="#A-community-of-variational-learners-1">A community of variational learners</a></h2><h2><a class="nav-anchor" id="A-multidimensional-variational-learner-1" href="#A-multidimensional-variational-learner-1">A multidimensional variational learner</a></h2><footer><hr/><a class="previous" href="../usage/"><span class="direction">Previous</span><span class="title">Usage</span></a><a class="next" href="../types/"><span class="direction">Next</span><span class="title">Types and Constructors</span></a></footer></article></body></html>
+end</code></pre><div class="admonition note"><div class="admonition-title">Note</div><div class="admonition-text"><p>The line</p></div></div><pre><code class="language-julia">global parent</code></pre><pre><code class="language-none">is necessary here so that the inner code block can modify the value of the global `parent` variable.</code></pre><p>To keep track of the inter-generational evolution, we add another global variable that registers the evolution of the first grammar probability at each generation:</p><pre><code class="language-julia">parent = VariationalLearner(0.01, 0.2, 0.1; age=30, plastic=false)
+setprobabilities!(parent, [0.1, 0.9])
+results = Array{Float64}(undef, 11)
+results[1] = parent.probabilities[1]
+for gen in 1:10
+  global parent
+  child = VariationalLearner(0.01, 0.2, 0.1; age=0, plastic=true)
+  for i in 1:10_000
+    listen!(child, parent)
+  end
+  parent = child
+  results[gen+1] = parent.probabilities[1]
+end</code></pre><div class="admonition note"><div class="admonition-title">Note</div><div class="admonition-text"><p>In performance-critical applications, <a href="https://docs.julialang.org/en/v1/manual/performance-tips/#Avoid-global-variables-1">global variables should be avoided</a>. This is easiest done by wrapping the code up in a function.</p></div></div><h2><a class="nav-anchor" id="A-community-of-variational-learners-1" href="#A-community-of-variational-learners-1">A community of variational learners</a></h2><h2><a class="nav-anchor" id="A-multidimensional-variational-learner-1" href="#A-multidimensional-variational-learner-1">A multidimensional variational learner</a></h2><footer><hr/><a class="previous" href="../usage/"><span class="direction">Previous</span><span class="title">Usage</span></a><a class="next" href="../types/"><span class="direction">Next</span><span class="title">Types and Constructors</span></a></footer></article></body></html>
