@@ -86,3 +86,14 @@ function listen!(x::VariationalLearner, y::VariationalLearner)
   end
 end
 
+
+"""
+    setprobabilities!(x::VariationalLearner, p::Array{Float64})
+
+Set a [`VariationalLearner`](@ref)s grammatical probabilities.
+
+The probabilities are scaled to sum to unity if necessary.
+"""
+function setprobabilities!(x::VariationalLearner, p::Array{Float64})
+  x.probabilities = vec(p/sum(p))
+end

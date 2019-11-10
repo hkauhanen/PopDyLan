@@ -19,6 +19,7 @@ getolder!
 inject!
 learn!
 listen!
+setprobabilities!
 speak
 ```
 
