@@ -26,5 +26,6 @@ export VariationalLearner
 export speak
 export learn!
 export listen!
+export setprobabilities!
 
 end

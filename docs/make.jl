@@ -9,11 +9,12 @@ using Documenter, .PopDyLan
 makedocs(sitename="PopDyLan.jl",
          pages = ["Home" => "intro.md",
                   "Usage" => "usage.md",
+                  "Examples" => "examples.md",
                   "Reference" => [
-                                  "Types" => "types.md",
-                                  "Methods" => "methods.md"
-                                 ],
-                  "Examples" => "examples.md"])
+                                  "Types and Constructors" => "types.md",
+                                  "Functions and Methods" => "methods.md"
+                                 ]
+                 ])
 
 deploydocs(repo="github.com/hkauhanen/PopDyLan.jl.git", 
            devbranch="dev")
